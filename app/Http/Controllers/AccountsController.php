@@ -133,6 +133,6 @@ class AccountsController extends Controller
         $categories = Categories::where('user_id', $user->id)->latest()->get();
 
         // Pass the account to the view
-        return view('accounts.show', compact('account', 'accountTitle', 'categories'));
+        return inertia('Account/Show', compact('account', 'accountTitle', 'categories'));
     }
 }
